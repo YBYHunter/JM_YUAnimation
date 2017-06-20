@@ -21,6 +21,7 @@
 		6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565781EF235D900652D1B /* CALayerAnimateViewController.m */; };
 		6B65657C1EF2668C00652D1B /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65657B1EF2668C00652D1B /* BezierView.m */; };
 		6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */; };
+		6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		6B65657B1EF2668C00652D1B /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 		6B6565801EF28E0B00652D1B /* WXEyeAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEyeAnimationView.h; sourceTree = "<group>"; };
 		6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEyeAnimationView.m; sourceTree = "<group>"; };
+		6B9F65901EF8FFAE002BCE8D /* AdvancedAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedAnimationViewController.h; sourceTree = "<group>"; };
+		6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedAnimationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				6B6565721EF2304D00652D1B /* UIViewAnimateViewController.m */,
 				6B6565771EF235D900652D1B /* CALayerAnimateViewController.h */,
 				6B6565781EF235D900652D1B /* CALayerAnimateViewController.m */,
+				6B9F65901EF8FFAE002BCE8D /* AdvancedAnimationViewController.h */,
+				6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */,
 				6B132DD31EF3AFEA00B20428 /* JMEyeAnimationView.h */,
 				6B132DD41EF3AFEA00B20428 /* JMEyeAnimationView.m */,
 				6B132DD01EF38F8600B20428 /* BendingAnimationView.h */,
@@ -315,6 +320,7 @@
 				6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */,
 				6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */,
 				6B6565731EF2304D00652D1B /* UIViewAnimateViewController.m in Sources */,
+				6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

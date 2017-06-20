@@ -21,7 +21,15 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
 @property (nonatomic,strong) CALayer * endPointLayer;
 @property (nonatomic,strong) CALayer * controlPointLayer;
 
-@property (nonatomic,assign) CGFloat currentY;
+//
+@property (nonatomic,strong) dispatch_source_t timer;
+@property (nonatomic,assign) CGFloat animationNum;
+
+/**
+ * increasingState == 1 开始递减
+ * increasingState == 2 开始递加
+ */
+@property (nonatomic,assign) CGFloat increasingState;
 
 @end
 
@@ -37,10 +45,14 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
         [self.layer addSublayer:self.semiellipseLayer];
         
         [self initData];
+        
+        _animationNum = 1;
     }
     return self;
 }
 
+
+//计算出一个椭圆
 -(CGPathRef)pathCreateForCurrentControlPointPositions:(CALayer *)beginPointLayer endPointLayer:(CALayer *)endPointLayer controlPointLayer:(CALayer *)controlPointLayer {
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, [beginPointLayer position].x, [beginPointLayer position].y);
@@ -49,6 +61,7 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     return path;
 }
 
+//计算出一个半圆
 -(CGPathRef)pathCreateForRadiusPositions:(CGPoint)centerPoint endPointLayer:(CALayer *)endPointLayer radius:(CGFloat)radius {
     CGMutablePathRef path = CGPathCreateMutable();
     
@@ -57,8 +70,6 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     
     CGPathAddRelativeArc(path, NULL, centerPoint.x, centerPoint.y, radius, startAngle, delta);
     
-    
-
     return path;
 }
 
@@ -79,8 +90,8 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     }
     else {
         self.semiellipseLayer.opacity = 1.0f;
-        if (per >= 1.5) {
-            per = 1.5;
+        if (per >= 1) {
+            per = 1;
         }
     }
     
@@ -119,6 +130,59 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     CFRelease(path);
 }
 
+#pragma mark - 公共方法
+
+- (void)animationStartWithMobileNum:(NSInteger)mobileNum {
+    
+}
+
+- (void)animationStartWithCloseEyesNum:(NSInteger)mobileNum {
+    
+    [self updatSemiellipseLayer:1];
+    [self updatSemicircleLayer:1];
+    self.topLineLayer.strokeStart = 0.f;
+    self.topLineLayer.strokeEnd = 1.0f;
+    
+    CGFloat animationTime = 1.5/2;
+    CGFloat animationFrameTime = 0.05f;
+    
+    __weak __typeof(self)weakSelf = self;
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    uint64_t interval = (uint64_t)(animationFrameTime * NSEC_PER_SEC);
+    dispatch_source_set_timer(self.timer, dispatch_walltime(NULL, 0), interval, 0);
+    dispatch_source_set_event_handler(self.timer, ^{
+        if (weakSelf.animationNum >= 1) {
+            weakSelf.increasingState = 1;
+            weakSelf.animationNum -= animationFrameTime/animationTime;
+        }
+        if (weakSelf.animationNum <= 0){
+            weakSelf.increasingState = 2;
+            weakSelf.animationNum += animationFrameTime/animationTime;
+        }
+
+        if (weakSelf.increasingState == 1) {
+            weakSelf.animationNum -= animationFrameTime/animationTime * 2;
+        }
+        if (weakSelf.increasingState == 2) {
+            weakSelf.animationNum += animationFrameTime/animationTime;
+        }
+        
+        [self updatSemiellipseLayer:weakSelf.animationNum];
+        [self updatSemicircleLayer:weakSelf.animationNum];
+
+    });
+    dispatch_resume(self.timer);
+    
+}
+
+- (void)dealloc {
+    if (self.timer) {
+        dispatch_cancel(self.timer);
+        self.timer = nil;
+    }
+}
+
 
 - (void)animationWith:(CGFloat)y {
 
@@ -139,6 +203,8 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     self.topLineLayer.strokeStart = storkeStartNum;
     self.topLineLayer.strokeEnd = storkeEndNum;
     
+    //第一阶段结束
+    //开始第二阶段
     if (storkeEndNum >= 1) {
         [self updatSemiellipseLayer:-y/NeedTotalheightSliding];
         [self updatSemicircleLayer:-y/NeedTotalheightSliding];
@@ -148,8 +214,6 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
         self.semiellipseLayer.opacity = 0.0f;
     }
     
-    
-    _currentY = y;
 }
 
 #pragma mark - getter

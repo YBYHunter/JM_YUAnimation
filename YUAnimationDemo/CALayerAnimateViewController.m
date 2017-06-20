@@ -39,9 +39,11 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     [self.view addSubview:self.aScrollView];
+    [self.aScrollView addSubview:self.loadingView];
     [self.aScrollView addSubview:self.baseAnimateView];
     [self.aScrollView addSubview:self.bezierView];
-    [self.aScrollView addSubview:self.loadingView];
+    
+    
     
     //CABaseAnimation
     //可以试试 0  1 和其他值
@@ -62,6 +64,8 @@
     [self.loadingView addSubview:self.eyeAnimationView];
     [self.loadingView addSubview:self.bendingAnimationView];
     [self.loadingView addSubview:self.jmEyeAnimationView];
+    
+    
 }
 
 
@@ -140,7 +144,7 @@
         _aScrollView = [[UIScrollView alloc] init];
         _aScrollView.clipsToBounds = NO;
         _aScrollView.delegate = self;
-        _aScrollView.frame = CGRectMake(0, 64 + 64, self.view.frame.size.width, self.view.frame.size.height);
+        _aScrollView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height);
         _aScrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height * 2);
     }
     return _aScrollView;
