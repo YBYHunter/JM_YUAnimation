@@ -63,16 +63,18 @@
         _leftLineLayer = [CAShapeLayer layer];
         
         UIBezierPath *path = [UIBezierPath bezierPath];
-        
+        path.lineCapStyle = kCGLineCapSquare;
         [path moveToPoint:CGPointMake(CGRectGetWidth(self.frame)/2, 0)];
         CGPoint endPoint = CGPointMake(CGRectGetWidth(self.frame)/2, CGRectGetHeight(self.frame));
         [path addQuadCurveToPoint:endPoint controlPoint:CGPointMake(0, CGRectGetHeight(self.frame))];
+        [path addLineToPoint:CGPointMake(0, 0)];
         
         _leftLineLayer.borderColor = [UIColor blackColor].CGColor;
         _leftLineLayer.fillColor = [UIColor clearColor].CGColor;
         _leftLineLayer.strokeColor = [UIColor whiteColor].CGColor;
-        _leftLineLayer.lineWidth = 1.0f;
+        _leftLineLayer.lineWidth = 10.0f;
         _leftLineLayer.path = path.CGPath;
+        
     }
     return _leftLineLayer;
 }

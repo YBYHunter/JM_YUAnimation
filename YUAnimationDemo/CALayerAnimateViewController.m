@@ -11,6 +11,7 @@
 #import "WXEyeAnimationView.h"
 #import "BendingAnimationView.h"
 #import "JMEyeAnimationView.h"
+#import "LayerAnimationView.h"
 
 @interface CALayerAnimateViewController ()<UIScrollViewDelegate>
 
@@ -26,6 +27,8 @@
 
 @property (nonatomic,strong) JMEyeAnimationView * jmEyeAnimationView;
 
+@property (nonatomic,strong) LayerAnimationView * layerAnimationView;
+
 @property (nonatomic,strong) UIScrollView * aScrollView;
 
 @end
@@ -39,11 +42,10 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     [self.view addSubview:self.aScrollView];
+    [self.aScrollView addSubview:self.layerAnimationView];
     [self.aScrollView addSubview:self.loadingView];
     [self.aScrollView addSubview:self.baseAnimateView];
     [self.aScrollView addSubview:self.bezierView];
-    
-    
     
     //CABaseAnimation
     //可以试试 0  1 和其他值
@@ -52,9 +54,18 @@
     redView.frame = CGRectMake(10, 10, 40, 40);
     redView.backgroundColor = [UIColor redColor];
     [redView.layer addAnimation:basicAnimation forKey:nil];
-//    [self.baseAnimateView addSubview:redView];
+    [self.baseAnimateView addSubview:redView];
     
-//    CAKeyframeAnimation * keyframeAnimation = [[CAKeyframeAnimation alloc] init];
+    CAKeyframeAnimation * keyframeAnimation = [[CAKeyframeAnimation alloc] init];
+    keyframeAnimation.duration = 0.3;
+    keyframeAnimation.keyPath = @"transform";
+    NSValue *value =  [NSValue valueWithCATransform3D:CATransform3DMakeRotation((-15) / 180.0 * M_PI, 0, 0, 1)];
+    NSValue *value1 =  [NSValue valueWithCATransform3D:CATransform3DMakeRotation((15) / 180.0 * M_PI, 0, 0, 1)];
+    NSValue *value2 =  [NSValue valueWithCATransform3D:CATransform3DMakeRotation((-15) / 180.0 * M_PI, 0, 0, 1)];
+    keyframeAnimation.values = @[value,value1,value2];
+    keyframeAnimation.keyTimes = @[@0.2,@0.5,@1.0f];
+    keyframeAnimation.repeatCount = MAXFLOAT;
+    [redView.layer addAnimation:keyframeAnimation forKey:@"transform_keyframeAnimation"];
     
     
     //贝塞尔曲线
@@ -152,7 +163,7 @@
 
 - (BezierView *)bezierView {
     if (_bezierView == nil) {
-        _bezierView = [[BezierView alloc] initWithFrame:CGRectMake(0, 200, self.view.frame.size.width, 400)];
+        _bezierView = [[BezierView alloc] initWithFrame:CGRectMake(0, 200 + 200, self.view.frame.size.width, 400)];
         _bezierView.backgroundColor = [UIColor redColor];
 
     }
@@ -163,9 +174,17 @@
     if (_baseAnimateView == nil) {
         _baseAnimateView = [[UIView alloc] init];
         _baseAnimateView.backgroundColor = [UIColor whiteColor];
-        _baseAnimateView.frame = CGRectMake(0, 0, self.view.frame.size.width, 200);
+        _baseAnimateView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200);
     }
     return _baseAnimateView;
+}
+
+- (LayerAnimationView *)layerAnimationView {
+    if (_layerAnimationView == nil) {
+        _layerAnimationView = [[LayerAnimationView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+        _layerAnimationView.backgroundColor = [UIColor redColor];
+    }
+    return _layerAnimationView;
 }
 
 - (void)didReceiveMemoryWarning {

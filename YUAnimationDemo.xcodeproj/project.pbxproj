@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		6B132DD21EF38F8600B20428 /* BendingAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B132DD11EF38F8600B20428 /* BendingAnimationView.m */; };
 		6B132DD51EF3AFEA00B20428 /* JMEyeAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B132DD41EF3AFEA00B20428 /* JMEyeAnimationView.m */; };
+		6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5912671EFA4C2700F99EC0 /* LayerAnimationView.m */; };
+		6B5912701EFA62FC00F99EC0 /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */; };
+		6B5912731EFA68B600F99EC0 /* fd68f3e0584f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */; };
 		6B6565401EF2302A00652D1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65653F1EF2302A00652D1B /* main.m */; };
 		6B6565431EF2302A00652D1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565421EF2302A00652D1B /* AppDelegate.m */; };
 		6B6565461EF2302A00652D1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565451EF2302A00652D1B /* ViewController.m */; };
@@ -46,6 +49,11 @@
 		6B132DD11EF38F8600B20428 /* BendingAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BendingAnimationView.m; sourceTree = "<group>"; };
 		6B132DD31EF3AFEA00B20428 /* JMEyeAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMEyeAnimationView.h; sourceTree = "<group>"; };
 		6B132DD41EF3AFEA00B20428 /* JMEyeAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMEyeAnimationView.m; sourceTree = "<group>"; };
+		6B5912661EFA4C2700F99EC0 /* LayerAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerAnimationView.h; sourceTree = "<group>"; };
+		6B5912671EFA4C2700F99EC0 /* LayerAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerAnimationView.m; sourceTree = "<group>"; };
+		6B59126E1EFA62FC00F99EC0 /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
+		6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
+		6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fd68f3e0584f.jpg; sourceTree = "<group>"; };
 		6B65653B1EF2302A00652D1B /* YUAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B65653F1EF2302A00652D1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B6565411EF2302A00652D1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +107,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B5912691EFA4C2C00F99EC0 /* LayerAnimationView(layer层动画) */ = {
+			isa = PBXGroup;
+			children = (
+				6B5912661EFA4C2700F99EC0 /* LayerAnimationView.h */,
+				6B5912671EFA4C2700F99EC0 /* LayerAnimationView.m */,
+			);
+			name = "LayerAnimationView(layer层动画)";
+			sourceTree = "<group>";
+		};
+		6B59126A1EFA4C3600F99EC0 /* JMEyeAnimationView(眼睛动画) */ = {
+			isa = PBXGroup;
+			children = (
+				6B132DD31EF3AFEA00B20428 /* JMEyeAnimationView.h */,
+				6B132DD41EF3AFEA00B20428 /* JMEyeAnimationView.m */,
+			);
+			name = "JMEyeAnimationView(眼睛动画)";
+			sourceTree = "<group>";
+		};
+		6B59126B1EFA4C3D00F99EC0 /* BendingAnimationView(曲线) */ = {
+			isa = PBXGroup;
+			children = (
+				6B132DD01EF38F8600B20428 /* BendingAnimationView.h */,
+				6B132DD11EF38F8600B20428 /* BendingAnimationView.m */,
+			);
+			name = "BendingAnimationView(曲线)";
+			sourceTree = "<group>";
+		};
+		6B59126C1EFA4C4C00F99EC0 /* WXEyeAnimationView(微信眼睛动画) */ = {
+			isa = PBXGroup;
+			children = (
+				6B6565801EF28E0B00652D1B /* WXEyeAnimationView.h */,
+				6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */,
+			);
+			name = "WXEyeAnimationView(微信眼睛动画)";
+			sourceTree = "<group>";
+		};
+		6B59126D1EFA4C5900F99EC0 /* BezierView(贝塞尔曲线) */ = {
+			isa = PBXGroup;
+			children = (
+				6B65657A1EF2668C00652D1B /* BezierView.h */,
+				6B65657B1EF2668C00652D1B /* BezierView.m */,
+			);
+			name = "BezierView(贝塞尔曲线)";
+			sourceTree = "<group>";
+		};
+		6B5912711EFA630500F99EC0 /* ReflectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */,
+				6B59126E1EFA62FC00F99EC0 /* ReflectionView.h */,
+				6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */,
+			);
+			name = ReflectionView;
+			sourceTree = "<group>";
+		};
 		6B6565321EF2302A00652D1B = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +195,12 @@
 				6B6565781EF235D900652D1B /* CALayerAnimateViewController.m */,
 				6B9F65901EF8FFAE002BCE8D /* AdvancedAnimationViewController.h */,
 				6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */,
-				6B132DD31EF3AFEA00B20428 /* JMEyeAnimationView.h */,
-				6B132DD41EF3AFEA00B20428 /* JMEyeAnimationView.m */,
-				6B132DD01EF38F8600B20428 /* BendingAnimationView.h */,
-				6B132DD11EF38F8600B20428 /* BendingAnimationView.m */,
-				6B6565801EF28E0B00652D1B /* WXEyeAnimationView.h */,
-				6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */,
-				6B65657A1EF2668C00652D1B /* BezierView.h */,
-				6B65657B1EF2668C00652D1B /* BezierView.m */,
+				6B5912711EFA630500F99EC0 /* ReflectionView */,
+				6B59126D1EFA4C5900F99EC0 /* BezierView(贝塞尔曲线) */,
+				6B59126C1EFA4C4C00F99EC0 /* WXEyeAnimationView(微信眼睛动画) */,
+				6B59126B1EFA4C3D00F99EC0 /* BendingAnimationView(曲线) */,
+				6B59126A1EFA4C3600F99EC0 /* JMEyeAnimationView(眼睛动画) */,
+				6B5912691EFA4C2C00F99EC0 /* LayerAnimationView(layer层动画) */,
 				6B6565471EF2302A00652D1B /* Main.storyboard */,
 				6B65654A1EF2302A00652D1B /* Assets.xcassets */,
 				6B65654C1EF2302A00652D1B /* LaunchScreen.storyboard */,
@@ -284,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5912731EFA68B600F99EC0 /* fd68f3e0584f.jpg in Resources */,
 				6B65654E1EF2302A00652D1B /* LaunchScreen.storyboard in Resources */,
 				6B65654B1EF2302A00652D1B /* Assets.xcassets in Resources */,
 				6B6565491EF2302A00652D1B /* Main.storyboard in Resources */,
@@ -316,8 +378,10 @@
 				6B6565431EF2302A00652D1B /* AppDelegate.m in Sources */,
 				6B6565401EF2302A00652D1B /* main.m in Sources */,
 				6B132DD21EF38F8600B20428 /* BendingAnimationView.m in Sources */,
+				6B5912701EFA62FC00F99EC0 /* ReflectionView.m in Sources */,
 				6B65657C1EF2668C00652D1B /* BezierView.m in Sources */,
 				6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */,
+				6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */,
 				6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */,
 				6B6565731EF2304D00652D1B /* UIViewAnimateViewController.m in Sources */,
 				6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */,

@@ -8,10 +8,13 @@
 
 #import "AdvancedAnimationViewController.h"
 #import "JMEyeAnimationView.h"
+#import "ReflectionView.h"
 
 @interface AdvancedAnimationViewController ()
 
 @property (nonatomic,strong) JMEyeAnimationView * eyeCloseAnimation;
+
+@property (nonatomic,strong) ReflectionView * reflectionView;
 
 @end
 
@@ -24,6 +27,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.eyeCloseAnimation];
+    [self.view addSubview:self.reflectionView];
     
     self.eyeCloseAnimation.backgroundColor = [UIColor redColor];
     [self.eyeCloseAnimation animationStartWithCloseEyesNum:1];
@@ -31,6 +35,13 @@
 }
 
 #pragma mark - getter
+
+- (ReflectionView *)reflectionView {
+    if (_reflectionView == nil) {
+        _reflectionView = [[ReflectionView alloc] initWithFrame:CGRectMake(0, 64 + 70, self.view.frame.size.width, 300)];
+    }
+    return _reflectionView;
+}
 
 - (JMEyeAnimationView *)eyeCloseAnimation {
     if (_eyeCloseAnimation == nil) {
