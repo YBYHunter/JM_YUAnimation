@@ -12,6 +12,7 @@
 		6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5912671EFA4C2700F99EC0 /* LayerAnimationView.m */; };
 		6B5912701EFA62FC00F99EC0 /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */; };
 		6B5912731EFA68B600F99EC0 /* fd68f3e0584f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */; };
+		6B5912761EFB743200F99EC0 /* PracticalAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5912751EFB743200F99EC0 /* PracticalAnimationViewController.m */; };
 		6B6565401EF2302A00652D1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65653F1EF2302A00652D1B /* main.m */; };
 		6B6565431EF2302A00652D1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565421EF2302A00652D1B /* AppDelegate.m */; };
 		6B6565461EF2302A00652D1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565451EF2302A00652D1B /* ViewController.m */; };
@@ -24,7 +25,12 @@
 		6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565781EF235D900652D1B /* CALayerAnimateViewController.m */; };
 		6B65657C1EF2668C00652D1B /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B65657B1EF2668C00652D1B /* BezierView.m */; };
 		6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */; };
+		6B815F801F0E370E008B2A33 /* JM_YUEyeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B815F7F1F0E370E008B2A33 /* JM_YUEyeView.m */; };
 		6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */; };
+		6BD8D9901F173C8200ABDE7F /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D98F1F173C8200ABDE7F /* WaveView.m */; };
+		6BD8D9931F17531D00ABDE7F /* JM_YUVoiceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D9921F17531D00ABDE7F /* JM_YUVoiceAnimation.m */; };
+		6BD8D9971F1758EA00ABDE7F /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D9961F1758EA00ABDE7F /* LVRecordTool.m */; };
+		6BD8D99B1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,8 @@
 		6B59126E1EFA62FC00F99EC0 /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
 		6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fd68f3e0584f.jpg; sourceTree = "<group>"; };
+		6B5912741EFB743200F99EC0 /* PracticalAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PracticalAnimationViewController.h; sourceTree = "<group>"; };
+		6B5912751EFB743200F99EC0 /* PracticalAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PracticalAnimationViewController.m; sourceTree = "<group>"; };
 		6B65653B1EF2302A00652D1B /* YUAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YUAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B65653F1EF2302A00652D1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B6565411EF2302A00652D1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,8 +86,18 @@
 		6B65657B1EF2668C00652D1B /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
 		6B6565801EF28E0B00652D1B /* WXEyeAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEyeAnimationView.h; sourceTree = "<group>"; };
 		6B6565811EF28E0B00652D1B /* WXEyeAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEyeAnimationView.m; sourceTree = "<group>"; };
+		6B815F7E1F0E370E008B2A33 /* JM_YUEyeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YUEyeView.h; sourceTree = "<group>"; };
+		6B815F7F1F0E370E008B2A33 /* JM_YUEyeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YUEyeView.m; sourceTree = "<group>"; };
 		6B9F65901EF8FFAE002BCE8D /* AdvancedAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedAnimationViewController.h; sourceTree = "<group>"; };
 		6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedAnimationViewController.m; sourceTree = "<group>"; };
+		6BD8D98E1F173C8200ABDE7F /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
+		6BD8D98F1F173C8200ABDE7F /* WaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveView.m; sourceTree = "<group>"; };
+		6BD8D9911F17531D00ABDE7F /* JM_YUVoiceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YUVoiceAnimation.h; sourceTree = "<group>"; };
+		6BD8D9921F17531D00ABDE7F /* JM_YUVoiceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YUVoiceAnimation.m; sourceTree = "<group>"; };
+		6BD8D9951F1758EA00ABDE7F /* LVRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordTool.h; sourceTree = "<group>"; };
+		6BD8D9961F1758EA00ABDE7F /* LVRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordTool.m; sourceTree = "<group>"; };
+		6BD8D9991F175CA700ABDE7F /* NSTimer+YUBlockSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+YUBlockSupport.h"; sourceTree = "<group>"; };
+		6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+YUBlockSupport.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,14 +170,14 @@
 			name = "BezierView(贝塞尔曲线)";
 			sourceTree = "<group>";
 		};
-		6B5912711EFA630500F99EC0 /* ReflectionView */ = {
+		6B5912711EFA630500F99EC0 /* ReflectionView(反射) */ = {
 			isa = PBXGroup;
 			children = (
 				6B5912721EFA68B600F99EC0 /* fd68f3e0584f.jpg */,
 				6B59126E1EFA62FC00F99EC0 /* ReflectionView.h */,
 				6B59126F1EFA62FC00F99EC0 /* ReflectionView.m */,
 			);
-			name = ReflectionView;
+			name = "ReflectionView(反射)";
 			sourceTree = "<group>";
 		};
 		6B6565321EF2302A00652D1B = {
@@ -195,7 +213,17 @@
 				6B6565781EF235D900652D1B /* CALayerAnimateViewController.m */,
 				6B9F65901EF8FFAE002BCE8D /* AdvancedAnimationViewController.h */,
 				6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */,
-				6B5912711EFA630500F99EC0 /* ReflectionView */,
+				6B5912741EFB743200F99EC0 /* PracticalAnimationViewController.h */,
+				6B5912751EFB743200F99EC0 /* PracticalAnimationViewController.m */,
+				6BD8D9981F175CA700ABDE7F /* NSTimer */,
+				6BD8D9941F1758EA00ABDE7F /* LVRecordTool */,
+				6BD8D9911F17531D00ABDE7F /* JM_YUVoiceAnimation.h */,
+				6BD8D9921F17531D00ABDE7F /* JM_YUVoiceAnimation.m */,
+				6BD8D98E1F173C8200ABDE7F /* WaveView.h */,
+				6BD8D98F1F173C8200ABDE7F /* WaveView.m */,
+				6B815F7E1F0E370E008B2A33 /* JM_YUEyeView.h */,
+				6B815F7F1F0E370E008B2A33 /* JM_YUEyeView.m */,
+				6B5912711EFA630500F99EC0 /* ReflectionView(反射) */,
 				6B59126D1EFA4C5900F99EC0 /* BezierView(贝塞尔曲线) */,
 				6B59126C1EFA4C4C00F99EC0 /* WXEyeAnimationView(微信眼睛动画) */,
 				6B59126B1EFA4C3D00F99EC0 /* BendingAnimationView(曲线) */,
@@ -234,6 +262,24 @@
 				6B6565651EF2302B00652D1B /* Info.plist */,
 			);
 			path = YUAnimationDemoUITests;
+			sourceTree = "<group>";
+		};
+		6BD8D9941F1758EA00ABDE7F /* LVRecordTool */ = {
+			isa = PBXGroup;
+			children = (
+				6BD8D9951F1758EA00ABDE7F /* LVRecordTool.h */,
+				6BD8D9961F1758EA00ABDE7F /* LVRecordTool.m */,
+			);
+			path = LVRecordTool;
+			sourceTree = "<group>";
+		};
+		6BD8D9981F175CA700ABDE7F /* NSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				6BD8D9991F175CA700ABDE7F /* NSTimer+YUBlockSupport.h */,
+				6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */,
+			);
+			path = NSTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,15 +422,21 @@
 				6B6565461EF2302A00652D1B /* ViewController.m in Sources */,
 				6B132DD51EF3AFEA00B20428 /* JMEyeAnimationView.m in Sources */,
 				6B6565431EF2302A00652D1B /* AppDelegate.m in Sources */,
+				6BD8D9901F173C8200ABDE7F /* WaveView.m in Sources */,
+				6BD8D99B1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m in Sources */,
 				6B6565401EF2302A00652D1B /* main.m in Sources */,
 				6B132DD21EF38F8600B20428 /* BendingAnimationView.m in Sources */,
 				6B5912701EFA62FC00F99EC0 /* ReflectionView.m in Sources */,
 				6B65657C1EF2668C00652D1B /* BezierView.m in Sources */,
+				6B5912761EFB743200F99EC0 /* PracticalAnimationViewController.m in Sources */,
 				6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */,
+				6BD8D9931F17531D00ABDE7F /* JM_YUVoiceAnimation.m in Sources */,
 				6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */,
 				6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */,
 				6B6565731EF2304D00652D1B /* UIViewAnimateViewController.m in Sources */,
 				6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */,
+				6BD8D9971F1758EA00ABDE7F /* LVRecordTool.m in Sources */,
+				6B815F801F0E370E008B2A33 /* JM_YUEyeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

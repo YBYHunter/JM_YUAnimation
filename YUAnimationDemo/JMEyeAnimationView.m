@@ -176,13 +176,6 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
     
 }
 
-- (void)dealloc {
-    if (self.timer) {
-        dispatch_cancel(self.timer);
-        self.timer = nil;
-    }
-}
-
 
 - (void)animationWith:(CGFloat)y {
 
@@ -283,6 +276,15 @@ static CGFloat const NeedTotalheightSliding = 64.0f;
         _controlPointLayer = [CALayer layer];
     }
     return _controlPointLayer;
+}
+
+
+
+- (void)dealloc {
+    if (self.timer) {
+        dispatch_cancel(self.timer);
+        self.timer = nil;
+    }
 }
 
 
