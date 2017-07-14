@@ -20,6 +20,8 @@
 
 @property (nonatomic,strong) WaveView * waveViewThree;
 
+@property (nonatomic,assign) BOOL isInAnimation;
+
 @end
 
 
@@ -34,9 +36,7 @@
         [self addSubview:self.waveViewTwo];
         [self addSubview:self.waveView];
         
-        [self.waveView startPhaseAnimation:0.01];
-        [self.waveViewTwo startPhaseAnimation:0.02];
-        [self.waveViewThree startPhaseAnimation:0.009];
+        [self startAnimation];
     }
     return self;
 }
@@ -58,11 +58,33 @@
     });
 }
 
+- (void)updateWithColor:(UIColor *)color1 color2:(UIColor *)color2 {
+    self.waveView.primaryWaveLineColor = color1;
+    self.waveViewTwo.primaryWaveLineColor = color2;
+    self.waveViewThree.primaryWaveLineColor = color2;
+    
+    [self.waveView setNeedsDisplay];
+    [self.waveViewTwo setNeedsDisplay];
+    [self.waveViewThree setNeedsDisplay];
+    
+}
 
-- (void)stopAnimation {
-    [self.waveView endPhaseAnimation];
-    [self.waveViewTwo endPhaseAnimation];
-    [self.waveViewThree endPhaseAnimation];
+- (void)startAnimation {
+    if (_isInAnimation == NO) {
+        [self.waveView startPhaseAnimation:0.01];
+        [self.waveViewTwo startPhaseAnimation:0.02];
+        [self.waveViewThree startPhaseAnimation:0.009];
+        _isInAnimation = YES;
+    }
+}
+
+- (void)pauseAnimation {
+    if (_isInAnimation) {
+        [self.waveView endPhaseAnimation];
+        [self.waveViewTwo endPhaseAnimation];
+        [self.waveViewThree endPhaseAnimation];
+        _isInAnimation = NO;
+    }
 }
 
 

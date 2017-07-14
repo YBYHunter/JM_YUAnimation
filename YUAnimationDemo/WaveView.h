@@ -16,9 +16,9 @@
 
 @property (nonatomic,assign) CGFloat density;   //密度
 
-@property (nonatomic,assign) CGFloat primaryWaveLineWidth; //线的宽
+@property (nonatomic,assign) CGFloat primaryWaveLineWidth;  //线的宽
 
-@property (nonatomic,strong) UIColor * primaryWaveLineColor;
+@property (nonatomic,strong) UIColor * primaryWaveLineColor;//线的颜色
 
 - (void)startPhaseAnimation:(CGFloat)speed;
 

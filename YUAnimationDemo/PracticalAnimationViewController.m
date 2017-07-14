@@ -10,6 +10,8 @@
 #import "JM_YUVoiceAnimation.h"
 #import "LVRecordTool.h"
 
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
 @interface PracticalAnimationViewController ()<LVRecordToolDelegate>
 
 @property (nonatomic,strong) JM_YUVoiceAnimation * voiceAnimation;
@@ -17,9 +19,13 @@
 
 @property (nonatomic,strong) UIButton * voiceButton;
 
+@property (nonatomic,strong) UIButton * stopButton;
+
+@property (nonatomic,strong) UIButton * startButton;
+
 @property (nonatomic,strong) UISlider * dSlider;
 
-@property (nonatomic,assign)  double lowPassResults;
+@property (nonatomic,assign) double lowPassResults;
 
 @end
 
@@ -46,6 +52,8 @@
     _dSlider = dSlider;
     
     [self.view addSubview:self.voiceButton];
+    [self.view addSubview:self.stopButton];
+    [self.view addSubview:self.startButton];
 }
 
 - (void)updateMeters {
@@ -84,7 +92,6 @@
     if (currentLevel >= 0.620000) {
         currentLevel = 0.620000;
     }
-    NSLog(@"currentLevel: %f", currentLevel);
     [self.voiceAnimation updateWithLevel:currentLevel];
     self.title = [NSString stringWithFormat:@"%.2f,",currentLevel];
     _dSlider.value = currentLevel;
@@ -95,6 +102,16 @@
 
 }
 
+
+- (void)stopButtonAction {
+    [self.voiceAnimation updateWithColor:[UIColor blackColor] color2:[UIColor blackColor]];
+    [self.voiceAnimation pauseAnimation];
+}
+
+- (void)startButtonAction {
+    [self.voiceAnimation updateWithColor:[UIColor whiteColor] color2:RGBACOLOR(223, 158, 147, 1)];
+    [self.voiceAnimation startAnimation];
+}
 
 #pragma mark 按下不动，开始录音
 - (void)touchDown:(UIButton *)button
@@ -109,7 +126,7 @@
                 //无麦克风
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    [self.voiceAnimation stopAnimation];
+                    [self.voiceAnimation pauseAnimation];
                     UIAlertView * alert =  [[UIAlertView alloc] initWithTitle:@"无法录音"
                                                                       message:@"请在iPhone的“设置-隐私-麦克风”选项中，允许积目访问你的手机麦克风"
                                                                      delegate:nil
@@ -173,6 +190,27 @@
 
 #pragma mark - getter
 
+- (UIButton *)startButton {
+    if (_startButton == nil) {
+        _startButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _startButton.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width - 64 )/2 - 64 - 10, 400, 64, 64);
+        _startButton.backgroundColor = [UIColor redColor];
+        [_startButton setTitle:@"start" forState:UIControlStateNormal];
+        [_startButton addTarget:self action:@selector(startButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _startButton;
+}
+
+- (UIButton *)stopButton {
+    if (_stopButton == nil) {
+        _stopButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _stopButton.frame = CGRectMake(([[UIScreen mainScreen] bounds].size.width - 64 )/2, 400, 64, 64);
+        _stopButton.backgroundColor = [UIColor redColor];
+        [_stopButton setTitle:@"stop" forState:UIControlStateNormal];
+        [_stopButton addTarget:self action:@selector(stopButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _stopButton;
+}
 
 - (UIButton *)voiceButton {
     if (_voiceButton == nil) {

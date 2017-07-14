@@ -14,7 +14,7 @@
 
 @property (nonatomic,assign) CGFloat phase;     //阶段
 
-
+@property (nonatomic,assign) CGContextRef context;
 
 @property (nonatomic, strong) dispatch_source_t timer;
 
@@ -59,24 +59,14 @@
 - (void)drawRect:(CGRect)rect {
     
     UIColor * waveColor = self.primaryWaveLineColor;
-    
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextClearRect(context, self.bounds);
-    
-    [self.backgroundColor set];
-    CGContextFillRect(context, rect);
     CGFloat strokeLineWidth = self.primaryWaveLineWidth;
-    CGContextSetLineWidth(context, strokeLineWidth);
-    
+    CGContextSetLineWidth(self.context, strokeLineWidth);
     CGFloat halfHeight = CGRectGetHeight(self.bounds) / 2.0f;
     CGFloat width = CGRectGetWidth(self.bounds);
     CGFloat mid = width / 2.0f;
-    
     const CGFloat maxAmplitude = halfHeight - (strokeLineWidth * 2);
-    
     CGFloat progress = 1.0f;
     CGFloat normedAmplitude = (1.5f * progress - 2.0f) * self.amplitude;
-    
     CGFloat multiplier = MIN(1.0, (progress / 3.0f * 2.0f) + (1.0f / 3.0f));
     [[waveColor colorWithAlphaComponent:multiplier * CGColorGetAlpha(waveColor.CGColor)] set];
     
@@ -84,18 +74,29 @@
         CGFloat scaling = -pow(1 / mid * (x - mid), 2) + 1;
         CGFloat y = scaling * maxAmplitude * normedAmplitude * sinf(2 * M_PI *(x / width) * self.frequency + self.phase) + halfHeight;
         if (x == 0) {
-            CGContextMoveToPoint(context, x, y);
+            CGContextMoveToPoint(self.context, x, y);
         } else {
-            CGContextAddLineToPoint(context, x, y);
+            CGContextAddLineToPoint(self.context, x, y);
         }
     }
     
-    CGContextStrokePath(context);
+    CGContextStrokePath(self.context);
 }
 
 
 
+#pragma mark - getter
 
+- (CGContextRef)context {
+    if (_context == nil) {
+        _context = UIGraphicsGetCurrentContext();
+        CGContextClearRect(self.context, self.bounds);
+        
+        [self.backgroundColor set];
+        CGContextFillRect(self.context, self.bounds);
+    }
+    return _context;
+}
 
 
 

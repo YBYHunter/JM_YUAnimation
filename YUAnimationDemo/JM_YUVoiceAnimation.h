@@ -13,7 +13,11 @@
 //0.1 - 1
 - (void)updateWithLevel:(CGFloat)percentage;
 
-- (void)stopAnimation;
+- (void)updateWithColor:(UIColor *)color1 color2:(UIColor *)color2;
+
+- (void)pauseAnimation;
+
+- (void)startAnimation;
 
 @end
 
