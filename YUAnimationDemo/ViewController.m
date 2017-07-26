@@ -11,6 +11,7 @@
 #import "CALayerAnimateViewController.h"
 #import "AdvancedAnimationViewController.h"
 #import "PracticalAnimationViewController.h"
+#import "JM_YULoadingViewController.h"
 
 @interface ViewController ()
 
@@ -22,6 +23,8 @@
 
 //实用的一些demo
 @property (nonatomic,strong) UIButton * practicalLayerAnimationButton;
+
+@property (nonatomic,strong) UIButton * jmyuLoadingAnimationButton;
 
 @end
 
@@ -36,6 +39,12 @@
     [self.view addSubview:self.layerAnimationButton];
     [self.view addSubview:self.advancedLayerAnimationButton];
     [self.view addSubview:self.practicalLayerAnimationButton];
+    [self.view addSubview:self.jmyuLoadingAnimationButton];
+}
+
+- (void)jmyuLoadingAnimationButtonAction {
+    JM_YULoadingViewController * next = [[JM_YULoadingViewController alloc] init];
+    [self.navigationController pushViewController:next animated:YES];
 }
 
 - (void)layerAnimationAction {
@@ -63,12 +72,26 @@
 
 #pragma mark - getter
 
+
+- (UIButton *)jmyuLoadingAnimationButton {
+    if (_jmyuLoadingAnimationButton == nil) {
+        _jmyuLoadingAnimationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _jmyuLoadingAnimationButton.backgroundColor = [UIColor redColor];
+        _jmyuLoadingAnimationButton.frame = CGRectMake(0, 64 * 5, self.view.frame.size.width, 64);
+        [_jmyuLoadingAnimationButton setTitle:@"loading动画demo" forState:UIControlStateNormal];
+        [_jmyuLoadingAnimationButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_jmyuLoadingAnimationButton addTarget:self action:@selector(jmyuLoadingAnimationButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _jmyuLoadingAnimationButton;
+}
+
+
 - (UIButton *)practicalLayerAnimationButton {
     if (_practicalLayerAnimationButton == nil) {
         _practicalLayerAnimationButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _practicalLayerAnimationButton.backgroundColor = [UIColor yellowColor];
         _practicalLayerAnimationButton.frame = CGRectMake(0, 64 * 4, self.view.frame.size.width, 64);
-        [_practicalLayerAnimationButton setTitle:@"一些实用动画demo" forState:UIControlStateNormal];
+        [_practicalLayerAnimationButton setTitle:@"波浪动画demo" forState:UIControlStateNormal];
         [_practicalLayerAnimationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_practicalLayerAnimationButton addTarget:self action:@selector(practicalAnimationAction) forControlEvents:UIControlEventTouchUpInside];
     }

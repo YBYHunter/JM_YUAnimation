@@ -31,6 +31,8 @@
 		6BD8D9931F17531D00ABDE7F /* JM_YUVoiceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D9921F17531D00ABDE7F /* JM_YUVoiceAnimation.m */; };
 		6BD8D9971F1758EA00ABDE7F /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D9961F1758EA00ABDE7F /* LVRecordTool.m */; };
 		6BD8D99B1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */; };
+		6BE0CEEF1F28677200172EDE /* JM_YULoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */; };
+		6BE0CEF31F2868B800172EDE /* JM_YULoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		6BD8D9961F1758EA00ABDE7F /* LVRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordTool.m; sourceTree = "<group>"; };
 		6BD8D9991F175CA700ABDE7F /* NSTimer+YUBlockSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+YUBlockSupport.h"; sourceTree = "<group>"; };
 		6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+YUBlockSupport.m"; sourceTree = "<group>"; };
+		6BE0CEED1F28677200172EDE /* JM_YULoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YULoadingViewController.h; sourceTree = "<group>"; };
+		6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YULoadingViewController.m; sourceTree = "<group>"; };
+		6BE0CEF11F2868B800172EDE /* JM_YULoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YULoadingView.h; sourceTree = "<group>"; };
+		6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YULoadingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 				6B9F65911EF8FFAE002BCE8D /* AdvancedAnimationViewController.m */,
 				6B5912741EFB743200F99EC0 /* PracticalAnimationViewController.h */,
 				6B5912751EFB743200F99EC0 /* PracticalAnimationViewController.m */,
+				6BE0CEF01F28685200172EDE /* JM_YULoadingViewController */,
 				6BD8D9981F175CA700ABDE7F /* NSTimer */,
 				6BD8D9941F1758EA00ABDE7F /* LVRecordTool */,
 				6BD8D9911F17531D00ABDE7F /* JM_YUVoiceAnimation.h */,
@@ -280,6 +287,17 @@
 				6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */,
 			);
 			path = NSTimer;
+			sourceTree = "<group>";
+		};
+		6BE0CEF01F28685200172EDE /* JM_YULoadingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6BE0CEED1F28677200172EDE /* JM_YULoadingViewController.h */,
+				6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */,
+				6BE0CEF11F2868B800172EDE /* JM_YULoadingView.h */,
+				6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */,
+			);
+			name = JM_YULoadingViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,8 +448,10 @@
 				6B65657C1EF2668C00652D1B /* BezierView.m in Sources */,
 				6B5912761EFB743200F99EC0 /* PracticalAnimationViewController.m in Sources */,
 				6B6565821EF28E0B00652D1B /* WXEyeAnimationView.m in Sources */,
+				6BE0CEEF1F28677200172EDE /* JM_YULoadingViewController.m in Sources */,
 				6BD8D9931F17531D00ABDE7F /* JM_YUVoiceAnimation.m in Sources */,
 				6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */,
+				6BE0CEF31F2868B800172EDE /* JM_YULoadingView.m in Sources */,
 				6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */,
 				6B6565731EF2304D00652D1B /* UIViewAnimateViewController.m in Sources */,
 				6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */,
