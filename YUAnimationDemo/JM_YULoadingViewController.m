@@ -8,11 +8,13 @@
 
 #import "JM_YULoadingViewController.h"
 #import "JM_YULoadingView.h"
+#import "JM_YUVoiceLoadingView.h"
 
 @interface JM_YULoadingViewController ()
 
 @property (nonatomic,strong) JM_YULoadingView * loadingView;
 
+@property (nonatomic,strong) JM_YUVoiceLoadingView * voiceLoadingView;
 
 @property (nonatomic,strong) UIButton * startButton;
 
@@ -27,7 +29,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.loadingView];
+//    [self.view addSubview:self.loadingView];
+    [self.view addSubview:self.voiceLoadingView];
     
     [self.view addSubview:self.startButton];
     
@@ -36,10 +39,12 @@
 
 - (void)startButtonAction {
     [self.loadingView startAnimation];
+    [self.voiceLoadingView startAnimation];
 }
 
 - (void)stopButtonAction {
     [self.loadingView pauseAnimation];
+    [self.voiceLoadingView stopAnimation];
 }
 
 #pragma mark - getter
@@ -66,6 +71,15 @@
         [_startButton addTarget:self action:@selector(startButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _startButton;
+}
+
+
+- (JM_YUVoiceLoadingView *)voiceLoadingView {
+    if (_voiceLoadingView == nil) {
+        _voiceLoadingView = [[JM_YUVoiceLoadingView alloc] initWithFrame:CGRectMake(0, 0, 33, 33)];
+        _voiceLoadingView.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2);
+    }
+    return _voiceLoadingView;
 }
 
 - (JM_YULoadingView *)loadingView {

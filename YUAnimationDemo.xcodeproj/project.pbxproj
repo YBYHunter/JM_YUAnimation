@@ -33,6 +33,7 @@
 		6BD8D99B1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD8D99A1F175CA700ABDE7F /* NSTimer+YUBlockSupport.m */; };
 		6BE0CEEF1F28677200172EDE /* JM_YULoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */; };
 		6BE0CEF31F2868B800172EDE /* JM_YULoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */; };
+		6BE0CEFD1F298CE800172EDE /* JM_YUVoiceLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0CEFC1F298CE800172EDE /* JM_YUVoiceLoadingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YULoadingViewController.m; sourceTree = "<group>"; };
 		6BE0CEF11F2868B800172EDE /* JM_YULoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YULoadingView.h; sourceTree = "<group>"; };
 		6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YULoadingView.m; sourceTree = "<group>"; };
+		6BE0CEFB1F298CE800172EDE /* JM_YUVoiceLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JM_YUVoiceLoadingView.h; sourceTree = "<group>"; };
+		6BE0CEFC1F298CE800172EDE /* JM_YUVoiceLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JM_YUVoiceLoadingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,8 @@
 				6BE0CEEE1F28677200172EDE /* JM_YULoadingViewController.m */,
 				6BE0CEF11F2868B800172EDE /* JM_YULoadingView.h */,
 				6BE0CEF21F2868B800172EDE /* JM_YULoadingView.m */,
+				6BE0CEFB1F298CE800172EDE /* JM_YUVoiceLoadingView.h */,
+				6BE0CEFC1F298CE800172EDE /* JM_YUVoiceLoadingView.m */,
 			);
 			name = JM_YULoadingViewController;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				6BD8D9931F17531D00ABDE7F /* JM_YUVoiceAnimation.m in Sources */,
 				6B5912681EFA4C2700F99EC0 /* LayerAnimationView.m in Sources */,
 				6BE0CEF31F2868B800172EDE /* JM_YULoadingView.m in Sources */,
+				6BE0CEFD1F298CE800172EDE /* JM_YUVoiceLoadingView.m in Sources */,
 				6B6565791EF235D900652D1B /* CALayerAnimateViewController.m in Sources */,
 				6B6565731EF2304D00652D1B /* UIViewAnimateViewController.m in Sources */,
 				6B9F65921EF8FFAE002BCE8D /* AdvancedAnimationViewController.m in Sources */,
